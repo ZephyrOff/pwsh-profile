@@ -77,7 +77,7 @@ $url = "https://api.github.com/repos/ZephyrOff/pwsh-profile/contents/fonts"
 
 $response = Invoke-RestMethod -Uri $url
 foreach ($file in $response) {
-    Write-Host "Téléchargement de $file.name"
+    Write-Host "Téléchargement de "$file.name
     $fileName = $outputFolder+$file.name
     $downloadUrl = $file.download_url
     Invoke-WebRequest -Uri $downloadUrl -OutFile $filename
