@@ -94,8 +94,9 @@ Where-Object {($_.Name -like '*.ttf') -or ($_.Name -like '*.otf') })) {
 }
 
 Write-Host "Installation de oh-my-posh"
-Install-Module oh-my-posh -Scope CurrentUser
-Import-Module oh-my-posh
+Set-ExecutionPolicy Bypass -Scope Process -Force; Invoke-Expression ((New-Object System.Net.WebClient).DownloadString('https://ohmyposh.dev/install.ps1'))
+#Install-Module oh-my-posh -Scope CurrentUser
+#Import-Module oh-my-posh
 Install-Module -Name Terminal-Icons -Repository PSGallery -Scope CurrentUser
 Import-Module -Name Terminal-Icons
 

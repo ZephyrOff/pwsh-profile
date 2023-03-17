@@ -83,7 +83,7 @@
                 "experimental.retroTerminalEffect": false,
                 "font": 
                 {
-                    "face": "CaskaydiaCove Nerd Font Mono",
+                    "face": "CaskaydiaCove NFM",
                     "size": 11.0,
                     "weight": "light"
                 },
