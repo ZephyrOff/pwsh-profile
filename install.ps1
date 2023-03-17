@@ -20,9 +20,9 @@ $outputFolder = $env:USERPROFILE+"\AppData\Local\Microsoft\Windows\Fonts"
 $response = Invoke-RestMethod -Uri $url
 
 foreach ($file in $response) {
-    $fileName = $file.name
+    $fileName = $outputFolder+"\"+$file.name
     $downloadUrl = $file.download_url
-    Invoke-WebRequest -Uri $downloadUrl -OutFile $outputFolder+"/"+$fileName
+    Invoke-WebRequest -Uri $downloadUrl -OutFile $filename
 }
 #$pfc = New-Object -ComObject Shell.Application
 #$pfc.ShellExecute("control.exe", "fonts", "", "open", 1)
