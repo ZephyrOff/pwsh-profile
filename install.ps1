@@ -16,11 +16,11 @@ Invoke-WebRequest "https://raw.githubusercontent.com/ZephyrOff/pwsh-profile/main
 
 Write-Host "Téléchargement des fonts"
 $url = "https://api.github.com/repos/ZephyrOff/pwsh-profile/contents/fonts"
-$outputFolder = $env:USERPROFILE+"\AppData\Local\Microsoft\Windows\Fonts"
+$outputFolder = $env:USERPROFILE+"\AppData\Local\Microsoft\Windows\Fonts\"
 $response = Invoke-RestMethod -Uri $url
 
 foreach ($file in $response) {
-    $fileName = $outputFolder+"\"+$file.name
+    $fileName = $outputFolder$file.name
     $downloadUrl = $file.download_url
     Invoke-WebRequest -Uri $downloadUrl -OutFile $filename
 }
