@@ -12,7 +12,7 @@ if (!(Test-Path -Path $wallpaper_folder)) {
 	New-Item -ItemType Directory -Path $wallpaper_folder -Force
 }
 Write-Host "Téléchargement du fond"
-Invoke-WebRequest "https://raw.githubusercontent.com/ZephyrOff/pwsh-profile/main/terminal/background.jpg" -OutFile $wallpaper_folder+"\background.jpg" -UseBasicParsing
+Invoke-WebRequest "https://raw.githubusercontent.com/ZephyrOff/pwsh-profile/main/terminal/background.jpg" -OutFile $wallpaper_folder"\background.jpg" -UseBasicParsing
 
 Write-Host "Téléchargement des fonts"
 $url = "https://api.github.com/repos/ZephyrOff/pwsh-profile/contents/fonts"
@@ -34,9 +34,9 @@ Install-Module -Name Terminal-Icons -Repository PSGallery -Scope CurrentUser
 Import-Module -Name Terminal-Icons
 
 Write-Host "Téléchargement de winfetch"
-Invoke-WebRequest "https://raw.githubusercontent.com/lptstr/winfetch/master/winfetch.ps1" -OutFile $profile_folder+"\apps\winfetch.ps1" -UseBasicParsing
+Invoke-WebRequest "https://raw.githubusercontent.com/lptstr/winfetch/master/winfetch.ps1" -OutFile $profile_folder"\apps\winfetch.ps1" -UseBasicParsing
 Write-Host "Configuration de winfetch"
-Invoke-WebRequest "https://raw.githubusercontent.com/ZephyrOff/pwsh-profile/main/winfetch/config.ps1" -OutFile $profile_folder+"\apps\winfetch_conf.ps1" -UseBasicParsing
+Invoke-WebRequest "https://raw.githubusercontent.com/ZephyrOff/pwsh-profile/main/winfetch/config.ps1" -OutFile $profile_folder"\apps\winfetch_conf.ps1" -UseBasicParsing
 
 Write-Host "Téléchargement de la configuration du terminal"
 $shell_json = $env:USERPROFILE+"\AppData\Local\Packages\Microsoft.WindowsTerminal_8wekyb3d8bbwe\LocalState\settings.json"
