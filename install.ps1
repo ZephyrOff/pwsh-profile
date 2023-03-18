@@ -117,7 +117,12 @@ Invoke-WebRequest "https://raw.githubusercontent.com/ZephyrOff/pwsh-profile/main
 
 Write-Host "Téléchargement des addons"
 $url = "https://api.github.com/repos/ZephyrOff/pwsh-profile/contents/pwsh/AddOn"
-$outputFolder = $profile_folder+"\AddOn"
+$outputFolder = $profile_folder+"\AddOn\"
+if (!(Test-Path -Path $outputFolder)) {
+    Write-Host "Création du dossier AddOn"
+    New-Item -ItemType Directory -Path $outputFolder -Force -OutVariable outputDirectory > $null
+}
+
 $response = Invoke-RestMethod -Uri $url
 foreach ($file in $response) {
     $fileName = $outputFolder+$file.name

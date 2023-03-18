@@ -54,5 +54,6 @@ if (Test-Path -Path $profile_path/AddOn){
 
 load-alias
 
+$env:WINFETCH_CONFIG_PATH = (Split-Path -parent $profile)+"\apps\winfetch_conf.ps1"
 oh-my-posh init pwsh --config "$profile_path\apps\perso.omp.json" | Invoke-Expression
 & $profile_path\apps\winfetch.ps1
