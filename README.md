@@ -4,6 +4,12 @@
 
 <br>
 
+## Prérequis
+- Windows Terminal
+- PowerShell 7
+
+<br>
+
 ## Installation automatique
 
 ```console
